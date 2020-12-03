@@ -1,0 +1,24 @@
+<div class="input-group mb-3">
+    <input #input type="text" class="form-control" placeholder="Recipient's username">
+    <div class="input-group-append">
+        <button (click) = getData(input.value) class="offset-3 btn btn-primary" type="button" id="button-addon2">Button</button>
+    </div>
+    <button (click) = addNew() class="offset-2 btn btn-warning" type="button" id="button-addon2">Agregar</button>
+  
+
+</div>
+
+
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" *ngFor="let tableHeader of tableColumnNames">{{tableHeader}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tableData of tableRowsData"> 
+            <td scope="col" *ngFor="let cellData of tableData | fieldSorterPipe" >{{cellData}}</td>
+        </tr>
+    </tbody>
+</table>
