@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FieldSortable } from 'src/app/entities/field-sortable';
 
+
+
 @Component({
   selector: 'app-data-info',
   templateUrl: './data-info.component.html',
@@ -13,6 +15,7 @@ export class DataInfoComponent implements OnInit {
 
   @Output() event: EventEmitter<string>;
   @Output() addNewEvent : EventEmitter<any>;
+
 
   constructor() { 
     this.event = new EventEmitter<string>();

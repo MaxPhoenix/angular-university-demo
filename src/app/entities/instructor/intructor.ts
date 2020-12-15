@@ -8,7 +8,10 @@ export class Instructor extends Person{
 
     getOrderedFields(): any[] {
         let dataToRender = super.getOrderedFields();
-        let instructorDetailData = this.instructorDetail.getOrderedFields();
-        return dataToRender.concat(instructorDetailData);
+        if(this.instructorDetail !== null && this.instructorDetail){
+            let instructorDetailData = this.instructorDetail.getOrderedFields();
+            dataToRender = dataToRender.concat(instructorDetailData);
+        }
+        return dataToRender;
     }
 }

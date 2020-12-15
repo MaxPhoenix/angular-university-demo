@@ -34,6 +34,9 @@ export class InstructorService extends BaseServiceService<Instructor>{
   }
 
   mapInstructorDetail(instructorDetailResponse : InstructorDetail): InstructorDetail{
+    if(instructorDetailResponse === null || instructorDetailResponse === undefined)
+      return null;
+    
     let instructorDetail : InstructorDetail  =  new InstructorDetail(instructorDetailResponse.id, instructorDetailResponse.youtubeChannel, instructorDetailResponse.hobby);
     return instructorDetail;
   }

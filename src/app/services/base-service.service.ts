@@ -23,4 +23,8 @@ export abstract class BaseServiceService <T extends BaseEntity>{
     return this.httpClient.get<T[]>(`${this.baseUrl}/${this.baseEndpoint}${endpointDetails}`);
   }
 
+
+  public saveEntity(entity : T) : Observable<T>{
+    return this.httpClient.post<T>(`${this.baseUrl}/${this.baseEndpoint}`, entity);
+  }
 }

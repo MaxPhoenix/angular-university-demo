@@ -1,7 +1,9 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { InstructorService } from './../../services/instructor.service';
 import { InstructorDetail } from './../../entities/instructor/intructor-detail';
 import { Instructor } from './../../entities/instructor/intructor';
 import { Component, OnInit } from '@angular/core';
+import { InstructorModalComponent } from './instructor-modal/instructor-modal.component';
 
 @Component({
   selector: 'app-instructor',
@@ -14,7 +16,8 @@ export class InstructorComponent implements OnInit {
   tableRowsData : Instructor[] = [];
 
   
-  constructor(private instructorService: InstructorService) {
+  constructor(private instructorService: InstructorService,
+              private ngModal : NgbModal) {
     
    }
 
@@ -32,7 +35,7 @@ export class InstructorComponent implements OnInit {
   }
 
   openNewModal(){
-    
+    this.ngModal.open(InstructorModalComponent, {size : "lg"});    
   }
 
 }

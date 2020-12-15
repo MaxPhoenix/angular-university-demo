@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <h4 class="col-11 modal-title text-center">Instructor Form</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input [(ngModel)]="instructor.firstName" type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input [(ngModel)]="instructor.lastName" type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-12">
+          <label for="email">Email</label>
+          <input [(ngModel)]="instructor.email" type="email" class="form-control" id="email" name="email" placeholder="e.g. max@lencina.com">
+        </div>   
+      </div>
+      <div class="form-group">
+        <label for="lastName">Youtube Channel</label>
+        <input [(ngModel)]="instructor.instructorDetail.youtubeChannel" type="text" class="form-control" id="youtubeChannel" name="lastName" placeholder="Enter your youtube channel">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Hobby</label>
+        <input [(ngModel)]="instructor.instructorDetail.hobby" type="text" class="form-control" id="lastName" name="hobby" placeholder="Enter your hobby">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click) = "saveNew()">Save</button>
+    <button type="button" class="btn btn-danger" (click)="activeModal.close('Close click')">Cancel</button>
+  </div>
+  

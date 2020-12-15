@@ -1,6 +1,8 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
 import { Student } from 'src/app/entities/student/student';
 import { StudentService } from 'src/app/services/student.service';
+import { StudentModalComponent } from './modal/student-modal/student-modal.component';
 
 @Component({
   selector: 'app-student',
@@ -12,7 +14,8 @@ export class StudentComponent implements OnInit {
   tableColumnNames : string[] = ["Id", "First Name", "Last Name", "Email"];
   tableRowsData : Student[] = [];
 
-  constructor(private studentService : StudentService) { 
+  constructor(private studentService : StudentService,
+              private modal : NgbModal) { 
 
   }
 
@@ -30,6 +33,7 @@ export class StudentComponent implements OnInit {
   }
 
   openNewModal(){
+    this.modal.open(StudentModalComponent, { size: 'lg' });
     
   }
 

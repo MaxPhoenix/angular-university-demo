@@ -1,7 +1,9 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Review } from './../../entities/reviews/review';
 import { Component, OnInit } from '@angular/core';
 import { Course } from 'src/app/entities/course/course';
 import { CourseService } from 'src/app/services/course.service';
+import { CourseModalComponent } from './course-modal/course-modal.component';
 
 @Component({
   selector: 'app-course',
@@ -14,7 +16,8 @@ export class CourseComponent implements OnInit {
   tableRowsData : Course[] = [];
  
 
-  constructor(private courseService : CourseService) { 
+  constructor(private courseService : CourseService,
+             private modal : NgbModal) { 
   
   }
 
@@ -27,7 +30,7 @@ export class CourseComponent implements OnInit {
   }
 
   openNewModal(){
-    
+    this.modal.open(CourseModalComponent);
   }
 
 }
