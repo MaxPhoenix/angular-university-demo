@@ -12,7 +12,7 @@ import { CourseModalComponent } from './course-modal/course-modal.component';
 })
 export class CourseComponent implements OnInit {
 
-  tableColumnNames : string[] = ["Id", "Tile", "Reviews"];
+  tableColumnNames : string[] = ["Id", "Tile", "Reviews", "Acciones"];
   tableRowsData : Course[] = [];
  
 

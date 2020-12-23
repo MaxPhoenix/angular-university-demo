@@ -15,11 +15,20 @@ export class StudentModalComponent implements OnInit {
   constructor(public activeModal: NgbActiveModal,
              private studentService : StudentService) { 
 
-    if(this.student === undefined || this.student === null)
-       this.student = this.createEmptyStudent();
+    
+  
   }
 
   ngOnInit(): void {
+    if(this.student === undefined || this.student === null)
+       this.student = this.createEmptyStudent();
+    else
+       this.getStudentById(this.student.id);   
+  }
+  
+  getStudentById(id: number){
+    this.studentService.getStudentById(id)
+              .subscribe(studentResponse => this.student = studentResponse);
   }
 
   saveNew(){

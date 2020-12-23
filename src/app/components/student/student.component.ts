@@ -34,7 +34,24 @@ export class StudentComponent implements OnInit {
 
   openNewModal(){
     this.modal.open(StudentModalComponent, { size: 'lg' });
-    
+  }
+
+  editStudent(student: Student){
+    const modalRef = this.modal.open(StudentModalComponent);
+    modalRef.componentInstance.student = student;
+  }
+
+  viewStudent(student: Student){
+    const modalRef = this.modal.open(StudentModalComponent);
+    modalRef.componentInstance.student = student;
+  }
+
+  deleteStudent(student: Student){
+
+  }
+
+  manageCourses(student: Student){
+      
   }
 
 }

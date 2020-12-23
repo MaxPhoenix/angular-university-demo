@@ -27,6 +27,10 @@ export class StudentService extends BaseServiceService<Student>{
               .pipe( map( response => response.map(student => this.mapStudent(student))));           
   }
 
+  getStudentById(id: number) : Observable<Student>{
+    return this.getEntityById(id);
+  }
+
   mapStudent(response: Student) : Student{
     let student : Student  =  new Student(response.id, response.firstName, response.lastName, response.email);
     student.courses = response.courses;

@@ -7,7 +7,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FieldSorterPipePipe implements PipeTransform {
 
   transform(value: BaseEntity): any[] {
-    console.log(value);
     return value.getOrderedFields();
   }
 

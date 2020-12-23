@@ -1,6 +1,15 @@
 <app-data-info class="m-5" 
                 (event) = "getStudents($event)" 
                 (addNewEvent)="openNewModal()"
+                (editEvent) = "editStudent($event)"
+                (viewEvent) = "viewStudent($event)"
+                (deleteEvent) = "deleteStudent($event)"
+                (additionalEvent) = "manageCourses($event)"
                 [tableColumnNames] = "tableColumnNames" 
+                [hasActions] = "true"
+                [editable] = "true"
+                [viewable] = "true"
+                [deletable] = "true"
+                [hasAdditionalActions] = "true"
                 [tableRowsData] = "tableRowsData">
 </app-data-info>

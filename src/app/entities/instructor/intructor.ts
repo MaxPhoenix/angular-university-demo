@@ -12,6 +12,8 @@ export class Instructor extends Person{
             let instructorDetailData = this.instructorDetail.getOrderedFields();
             dataToRender = dataToRender.concat(instructorDetailData);
         }
+        else 
+            dataToRender = dataToRender.concat("-", "-")
         return dataToRender;
     }
 }
